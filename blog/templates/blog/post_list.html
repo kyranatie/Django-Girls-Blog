@@ -10,19 +10,13 @@
     <div>
         <h1> <a href=""> Django Girls Blog</a> </h1>
     </div>
-
-    <div>
-        <p>published 13.07.2015</p>
-        <h2> <a href=""> First Girls Blog</a> </h2>
-        <p> A life without passion is no life to live</p>
-    </div>
-
-    <div>
-        <p>published 13.07.2015</p>
-        <h2> <a href=""> Second Blog</a> </h2>
-        <p> A life without passion is no love to live</p>
-    </div>
-
+{% for post in posts %}
+  <div>
+      <p>published:{{ post.published_date }}</p>
+      <h1> <a href=""> {{ post.title }}</a> </h1>
+      <p>{{ post.text|linebreaks }}</p>
+   </div>
+ {% endfor %}
 
 <p></p>
 </body>
